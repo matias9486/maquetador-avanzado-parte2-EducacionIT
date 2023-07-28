@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+:root{
+    --font-roboto:'Roboto', sans-serif;
+
+    /*font size*/
+    --fs-2:2em;
+    --fs-3:3em;
+
+    /*font weight*/
+    --fw-regular:400;
+    --fw-black:900;
+
+    /*color*/
+    --clr-black:#000000;
+    --clr-white:#ffffff;
+
+    font-family: var(--font-roboto);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{    
+    height: 300px;
+    
+    background-image: url('../images/fondo.jpg');
+    background-size: 100% 300%;
+    background-repeat: no-repeat;    
+}
+
+h1{    
+    font-weight: var(--fw-black);
+    font-size: var(--fs-3);
+
+    background-color: var(--clr-white);
+    position: absolute;
+    /*left: 30%;
+    top: 30%;*/
+    left: 30%;
+    top: 18%;
+
+    mix-blend-mode: screen;
+    border-radius: 10px;
+    padding: 10px 5px;    
+}
+
+img{
+    border-radius: 10px;    
+}
+
+.experience{
+    max-width: 680px;
+    background-color:violet;
+    padding: 20px;
+    border-top-left-radius: 10px;
+}
+
+h2{    
+    font-weight: var(--fw-black);
+    font-size: var(--fs-2);
+
+    color: var(--clr-black);
+    margin: 20px 0;
+}
+
+p{
+    font-weight: var(--fw-regular);
+    margin: 0 0 20px;
+}
+
+/*-----------------*/
+.container {
+    position: relative;                    
+    max-width: 550px;
+}
+
+.elemento1 {    
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;    
+}
+
+.elemento2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;        
+    z-index: 2;
+    visibility: hidden;    
+    min-height: 100%;
+}
+
+@keyframes slidein {
+    from {
+        margin-right: 100%;
+        visibility: visible;        
+    }
+
+    to {
+        margin-right: 0%;
+        visibility: visible;        
+    }    
+}
+
+/*afectar el hermano ~ del el elemento sobre el que hagas hover
+*/
+.elemento1:hover ~ .elemento2{    
+    visibility: visible;
+    animation-duration: 1s;
+    animation-name: slidein;    
+}
+
+/*para que no quede "titilando" el div que contiene la experiencia*/
+.elemento2:hover{
+    visibility: visible;
+}
+
+.experience > div > h3{
+    margin: 30px 0;
+}
